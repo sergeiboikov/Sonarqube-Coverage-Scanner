@@ -63,8 +63,8 @@ def test_explicit_branch(config, fake_sonar):
     assert row.analysis_date
     assert row.new_code_definition == "NUMBER_OF_DAYS=30"
     assert row.new_code_start
-    assert row.overall == CoverageMetrics("85.3", "87.0", "70.1", "1200", "156")
-    assert row.new_code == CoverageMetrics("72.0", "75.6", "60.0", "40", "10")
+    assert row.overall == CoverageMetrics("85,3", "87,0", "70,1", "1200", "156")
+    assert row.new_code == CoverageMetrics("72,0", "75,6", "60,0", "40", "10")
     assert row.comment == ""
     assert fake_sonar.requests[-1].url.params["branch"] == "r124.0"
 
@@ -143,7 +143,7 @@ def test_no_new_lines_to_cover(config, fake_sonar):
     )
     row = collect(config, fake_sonar, Project(key="app-one", team="A", branch="r125.1"))
 
-    assert row.overall == CoverageMetrics("80.0", "", "", "100", "20")
+    assert row.overall == CoverageMetrics("80,0", "", "", "100", "20")
     assert row.new_code is None
     assert row.comment == "no new lines to cover"
 

@@ -55,7 +55,8 @@ def _measure_value(measure: dict) -> str | None:
 def _percent(value: str | None) -> str:
     if value is None:
         return ""
-    return str(Decimal(value).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP))
+    quantized = Decimal(value).quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)
+    return f"{quantized:.1f}".replace(".", ",")
 
 
 def _count(value: str | None) -> str:
