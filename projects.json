@@ -1,0 +1,12 @@
+[
+  {
+    "projectKey": "nsd.java:app-one",
+    "Team": "Команда А",
+    "Branch": "r125.1"
+  },
+  {
+    "projectKey": "nsd.java:app-two",
+    "Team": "Команда Б",
+    "Branch": ""
+  }
+]
